@@ -1,7 +1,12 @@
 from django.urls import path
-from django.views import View
-from .import views
+from . import views
 
 urlpatterns = [
-    path('',views.Home,name='Homepage')
+    path('',views.tweet_list,name='tweet_list'),
+    path('tweet_create/',views.tweet_create,name='tweet_create'),
+    path('delete/<int:tweet_id>',views.tweet_delete,name='tweet_delete'),
+    path('edit/<int:tweet_id>',views.tweet_edit,name='tweet_edit'),
+    path('register/',views.register,name='register'),
+    
+    
 ]
